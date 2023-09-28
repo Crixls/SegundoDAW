@@ -1,0 +1,290 @@
+********** OBLIGATORIO ********************
+
+/*
+    @author: Cristina Luque Santaella
+    @description: Devolver un nuevo array que contenga la suma de los dos arrays
+
+*/
+
+
+/**
+ * Función que suma dos números
+ * @param {num} a 
+ * @param {num} b 
+ * @returns {num}
+ */
+
+********************************************
+
+VARIABLES
+
+para los primitivos - se puede usar let o const
+para los no primitivos - se usa const
+
+typeOf - para saber el tipo de dato
+
+
+primitivos: string (comillas simples, francesas y dobles), number, bigInt, boolean, undefined, null, Symbol(crea una variable que no se puede contener pero el valor es único, pero no lo puedes ver ni cambiar, le podemos dar una descripción a la variable, ninguna otra variable puede ser igual)
+
+a == b; tipo es el mismo
+a === b; tipo y contenido es el mismo
+
+let b = `${a}`; conversión de tipo string
+let c= +a; se convierte en number
+let c = ""+a; va a ser un string
+let a=10>"18" convierte a número el símbolo mayor
+
+let d = Symbol("letra d"); una variable única en el sistema
+
+let a=10;
+
+b=a++; b vale 10 porque los más se suman después
+ya que a ahora es 11
+
+b=++a; a vale 11 y b vale 11
+
+potencia: 2**4
+
+Math.sqrt(10); es para la raíz cuadrada
+
+CONVERSIÓN DE TIPOS
+
+
+
+
+Number("18"); se convierte en número el string 
+Number("18j"); te da Nan
+
++"18" se convierte en número
+
+let a=19;
+
+let b=a.toString(); convierte un número a string
+let j = String(a); tambien convierte en string un número
+
+j= "10.5"
+parseInt(j); devuelve 10
+parseFloat(j); devuelve 10.5
+
+c=10.5e4; devuelve 105000P
+
+Precisión pequeña usa librerías
+
+const verdader= Boolean("true"); convierte a boolenao
+
+
+
+DOCUMENTO VISUAL STUDIO CODE
+
+- Dentro del body en cualquier lado se puede poner una referencia a javaScript
+- En la última línea del body, para que carge todo el html
+- Poner script en el head (<script src="script.js"></script>) esta es la opción recomendada
+
+<script src="script.js" async></script> deja que se use el script y el html a la vez
+
+<script src="script.js" defer></script> cuando se carga el html se ejecuta el script, se debe usar mejor defer
+
+
+FUNCIONES
+
+Las funciones deben tener return 
+
+*ARROW-FUNCTION*
+
+si solo tengo un parametro no tienen porque ir con paréntesis, si solo hay una linea de codigo se le pueden quitar las llaves, si solo hay una linea de codigo no necesita poner return
+
+si es multilínea se debe de poner parentesis y return
+
+const saludar = () => "Hola, mundo!";
+
+
+
+OPERACIÓN TERNARIA
+
+
+let z =0;
+
+if(z){
+	console.log("es verdad");
+else{
+	console.log("es falso");
+}
+
+el cero, undefined y null es false y cualquier numero diferente de 0 e incluso infinito es true
+
+
+
+const divi = m ? "no se puede dividir": n/m;
+
+? es para indicar lo que es true y : es para indicar lo que es falso en una operación ternaria
+
+
+Scope es el ámbito en el que funciona la variable 
+
+
+// A una constante no se le puede cambiar el valor, solo se le puede asignar un valor una vez mientras que let se le puede asignar otro valor
+
+
+NULISH COLLECTOR
+
+let newA = a ?? 10;
+
+Si una variable está en null o undefined y le pondrás por defecto lo que le des en este ejemplo 10
+
+
+
+a || b para que sea esto falso ambas deben ser falsas, para que sea true al menos una de ellas debe ser true
+
+
+Arrow-function y recursiva
+
+const factorial2 = n => n===0 || n===1 ? 1 : n*factorial2(n-1);
+undefined
+const numero = 5; // Cambia este valor al número del que desees calcular el factorial
+const resultado = factorial2(numero);
+undefined
+console.log(resultado);
+
+
+ARRAYS
+
+Los array deben de ir con const para que el tipo nunca cambie siempre debe estar en const y el valor de este nunca va a cambiar una vez que se le ha inciado, se pueden sobreescribir las posiciones y da igual si es string o número el array, nunca vayas a ponerle el valor a negativo en un array
+
+array literal 
+
+const mArray = [1,2,3,4,5,6,7,8,9,10]
+
+array vacío
+
+const mArray2 = new Array();
+
+
+MÉTODOS
+
+const mArray = [1,2,3,4,5,6,7,8,9,10];
+
+
+mArray.pop - elimina lo que hay en última posición y puedes usarlo en una variable después let ultimo=mArray.pop();
+
+
+mArray.push - lo que hace es añadir al final de una array un valor mArray.push(12);
+
+mArray.unshift - añade por delante 
+mAarry.shift() -  elimina la primera posición
+
+mArray.slice(1,4); - nos devuelve los valores entre la posición 1 a la 3
+
+mArray.slice(1) - me devuelve todo el array menos la primera posición
+
+mArray.slice(-1) -  me devuelve solo la posición última
+
+mArray.splice(2,0,'9','8','7');  - colocate en la posición dos(2) no me borres ninguno(0) y inserta valores nuevos ('9','8','7') el splice devuelve solo lo que borra y lo modifica
+
+mArray.splice(2,3,'a')
+(3) [3, 4, 5]
+mArray
+(8) [1, 2, 'a', 6, 7, 8, 9, 10]
+
+a1=[1,2];
+a2=[3,4],
+
+const a3 =a1.concat(a2) -  sirve para unir variables
+
+(4) [1, 2, 3, 4]
+
+-------------------------------------------------------------------------
+MÉTODOS DIFÍCILES
+
+
+Map - (callback es una array function con argumentos, thisArg hace referencia al propio objeto), se usan en los arrays
+
+a3 = [1, 2, 3, 4];
+
+a3.map(num => num **(1/2)) -  cada uno de los elementos se meten en num en cada una de las iteraciones es decir que num recorre los números y hace lo que hay en las arrow function, num es porque hay que ponerlo en singular ya que cada iteración es un elemento
+
+(4) [1, 1.4142135623730951, 1.7320508075688772, 2]
+
+const a4 =a3.map(num => num **(1/2)); - lo almacenamos en un nuevo arreglo
+
+a3.filter(numero => numero<=2) - coge y comprueba cuales son los números menores de 2 o iguales a el 
+
+a3.filter(numero => numero<=2).map(num => num**2)
+(2) [1, 4] devuelve esto
+
+
+a3.reduce((acumulador, numero) => acumulador+=numero,0) -  el acumulador lo inicializa a cero y va sumandose que es lo mismo acumulador=acumu+numero, numero es cada uno de los valores que se han iterado
+
+10 es lo que devuelve
+
+
+for (let i = 0; i < a3.length; i++) {
+    console.log(a3[i]);
+}
+
+El forEach sustituye a for
+arr
+a3.forEach(num => console.log(num));
+
+forin se usa para recorrer las propiedades de un objeto, forin con array nunca y forof se usa para recorrer los elementos de un array
+
+for (num of a3){ console.log(num)} devuelve 1,2,3,4
+
+
+MDN javaScript
+
+--------------------------------------
+
+Enumera los tipos de datos primitivos de java
+
+Estructura de datos set
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
